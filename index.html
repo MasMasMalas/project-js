@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suka Martabk</title>
+    <style>
+      body{
+      display: flex; /* Mengatur body sebagai flex container */
+      align-items: center; /* Menyusun elemen di tengah secara horizontal */
+      justify-content: center; /* Menyusun elemen di tengah secara vertikal */
+      height: 100vh; /* Menggunakan 100% tinggi layar */
+      margin: 0;
+      }
+      #h1{
+        text-align: center;
+      }
+      #jawab{
+      display: flex; 
+      align-items: center; /* Center items horizontally */
+      justify-content: center; /* Center items vertically */
+      min-height: 0;
+      }  
+      button {
+        font-size: 4rem;
+        margin: 2rem;
+        padding: 15px;
+        border-radius: 20px;
+        box-shadow: 0px 20px 0px black;
+      }
+      #iya:active {
+        transform: translateY(10px);
+        box-shadow: 0px 10px 0px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+    <h1 id="h1">Apakah kamu suka Martabak?</h1>
+    <div id="jawab">
+    <button id="iya">Iya</button>
+    <button id="tidak">Tidak</button></div>
+    </div>
+    <script>
+      const pertanyaan = document.getElementById("h1");
+      pertanyaan.style.fontSize = "4rem";
+
+      const tidak = document.getElementById("tidak");
+      tidak.addEventListener("mouseenter", function () {
+        tidak.style.position = "absoulute"
+        const randomX = Math.floor(Math.random() * 300) - 200; // Angka antara -100px dan 100px
+        const randomY = Math.floor(Math.random() * 400) - 100; // Angka antara -100px dan 100px
+
+        // Terapkan transformasi ke elemen
+        tidak.style.transform = `translate(${randomX}px, ${randomY}px)`;
+      });
+    </script>
+  </body>
+</html>
